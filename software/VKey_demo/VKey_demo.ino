@@ -12,19 +12,19 @@
 #include <VKey.h>
 
 
-VKey keypad(1, VKey::THREE );
+VKey keypad(1, VKey::FIVE );
 
 void setup()
 {
   Serial.begin(9600);
-  Serial.println("VKey read example");
+  Serial.println("VKey example");
 }
 
 void loop() 
 {
-  VKey::keynum k;
+  VKey::eKeynum k;
 
-  if(keypad.CheckKeys(k))
+  if(keypad.checkKeys(k))
   {
     // CheckKeys will always return the current key in k.
     // The boolean return value indicates whether that value is different than the
