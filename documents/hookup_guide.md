@@ -8,13 +8,13 @@ If you need to add a keypad to your microcontroller project, but don't want to u
 
 -> *VKey Voltage Keypad* <-
 
-Traditional digital keypad interfacing techniques can require a large number of digital I/O lines.  One common arrangement uses N digital outputs and M digital inputs to interface with an N*M array of keys, [as described here](http://www.embeddedrelated.com/showarticle/72.php).  On a small controller, there may not be many I/O pins left for other tasks.
+Traditional digital keypad interfacing techniques can require a large number of digital I/O lines.  One common arrangement uses N digital outputs and M digital inputs to interface with an N*M array of keys, [as described here](http://www.openmusiclabs.com/learning/digital/input-matrix-scanning/single-mux/).  On a small controller, there may not be many I/O pins left for other tasks.
 
 The VKey board has 12 pushbutton switches and some supporting circuitry.  It outputs an analog voltage that represents which of the keys is being pressed.  The output can be sampled using a single channel of ADC, allowing 12 keys to be scanned using a single analog input pin.
 
 ### Covered In This Tutorial
 
-This tutorial will guide you through connecting the VKey to an Arduino, and introduce a library that tells the application which key is currently pressed.
+This tutorial will guide you through connecting the VKey to an Arduino, and introduces a library that tells the application which key is currently pressed.
 
 ### Required Materials
 
@@ -42,7 +42,9 @@ Looking at the front of the board, we see an 3 * 4 array of tactile switches, an
 -> *Front of VKey* <-
 
 **GND** should be connected to the ground of the host circuit.
+
 **Vout** is the analog output of the keypad, and should be connected to an analogto-digital channel (ausuch as A0, A1, etc on an Arduino).
+
 **V+** is the power supply, and should be connected to a voltage between 2.5V - 5.5V.
 
 ### How It Works
@@ -52,7 +54,7 @@ Take a look at the back of the VKey.
 `back pic`
 -> *Back of VKey* <-
 
-The chip is a dual opamp, used for form a current source and buffer amplifier.  The current source drives a string of resistors that form a voltage divider, and the tact switches select different voltages at the different taps of the divider. 
+The chip is a dual opamp, used as a current source and buffer amplifier.  The current source drives a string of resistors that form a voltage divider, and the tact switches select different voltages at the different taps of the divider. 
 
 See the [resources]() section for links to a much more detailed guide to the internals of the VKey.
 
@@ -80,12 +82,11 @@ As you can see, with a 5V supply, each successive button adds about 200 mV to th
 
 One situation to consider is when more than one key is pressed at the same time.  The VKey implements high-key number (or low voltage) priority - when more than one of the switches is closed at a time, the output will indicate the higher key number.  For instance, if you hold down 5 and 9 together, the output will indicate key 9 is pressed.
 
-
 ---
 
 ##Hookup Example
 
-The VKey comes with the surface mount components assembled, but the PTH tactile switches are loose.   
+The VKey comes with the surface mount components assembled, but the PTH tactile switches are loose, and need to be soldered to the board.   
 
 `pic`
 -> *Contents of the VKey package* <- 
@@ -124,7 +125,7 @@ And of course, you could always solder wires directly to the board in place of t
 
 ##Arduino Library
 
-To make interfacing the VKey as simple as possible, we've written an [Arduino library](https://github.com/sparkfun/VKey/). which we demonstrate with an example sketch. If you need a refresher on how to install an Arduino library, please see our [library tutorial](tutorials/15).  
+To make interfacing the VKey as simple as possible, we've written an [Arduino library](https://github.com/sparkfun/VKey/), which we demonstrate with an example sketch. If you need a refresher on how to install an Arduino library, please see our [library tutorial](tutorials/15).  
 
 The VKey library provides an object that interfaces with a VKey keypad.  In a typical application, this class is instantiated as a global object before the `setup()` function.  In the VKey object declaration, you need to select the appropriate analog input pin, and set the power indication to the proper voltage, either `THREE` or `FIVE`.
 
@@ -143,13 +144,17 @@ The next page will show us a quick sample sketch that uses the VKey library.
 
 ...obtain the example sketch
 
+#Fill this in after code is reviewed...
 
-Build and upload the sketch
+* includes
+* obj decl
+* no special setup...
+* call `checkKeys()`
 
-Open a serial terminal, and observe the output while pressing buttons.  The Arduino will print notifications as buttons are pressed and released. 
+Build and upload the sketch, then open a serial terminal, and observe the output while pressing buttons.  The Arduino will print notifications as buttons are pressed and released. 
 
 `pic`
--> *The Arduino recognizes keys based on the volrage from the VKey* <-
+-> *The Arduino recognizes keys based on the voltage produced by the VKey* <-
 
 If the Arduino isn't properly tracking the key numbers, doublecheck that the VKey object was declared with the proper supply voltage.
 
@@ -161,14 +166,16 @@ The VKey is a great way to add up to 12 buttons to a project, while still leavin
 
 ###Modifications
 
-
+There are a number of possible alterations that can be made to the VKey, to tailor it to a specific application.
 
 #### Different Switches
 The VKey comes with 12 PTH pushbutton switches, but can support nearly any normally-open SPST switch, such as [arcade switches](https://www.sparkfun.com/products/9336) or [microswitches](https://www.sparkfun.com/products/9414).
 
-To connect other switches, connect them to the ?? pads where the tact switch would normally be installed.
 
 `pix`
+-> *Connect alternate switches across the left pair of pads* <-
+
+To connect other switches, connect them to the pair of pads on the left of the tact switch footprint, as seen from the front of the board.
 
 #### Voltage Source
 
@@ -176,9 +183,8 @@ While the VKey is primarily intended to interface with a microcontroller, that d
 
 ###Digging Deeper
 
-For more details about the internals of the VKey, check the *theory* directory of the VKey [Github repository](https://github.com/sparkfun/VKey).  You'll find a more detailed theory of operations document, with supporting  SPICE simulations and spreadsheets.
+For more details about the internals of the VKey, check the *documents* directory of the [VKey Github repository](https://github.com/sparkfun/VKey).  You'll find a more detailed theory of operations document, with supporting  SPICE simulations and spreadsheets.
 
-...
 * schem
 * eagle files zip
 * [Github Repository](https://github.com/sparkfun/VKey)

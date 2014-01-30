@@ -135,6 +135,9 @@ class VKey
      */
     static const PROGMEM VKeyScale scales[MAX];
     const PROGMEM  VKeyScale* scale_p;
+    
+    /* Member variables
+     */
           int      analog_pin;
           eKeynum  last_key;
 };

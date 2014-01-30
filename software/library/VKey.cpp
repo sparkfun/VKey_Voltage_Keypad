@@ -26,8 +26,8 @@
 const PROGMEM VKey::VKeyScale VKey::scales[MAX] =
 {
    // min, step, max
-   {26,    58,   722},
-   {17,    40,   497}
+   {26,    58,   721},
+   {17,    40,   496}
 };
 
 /* Constructor.
@@ -49,7 +49,7 @@ VKey::VKey(uint8_t pin,
   pinMode(pin, INPUT);
 }
 
-/* checkKeys
+/* checkKeys()
  * Sample the ADC.
  * Convert the sample into a key number.
  *

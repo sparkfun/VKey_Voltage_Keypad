@@ -3,15 +3,16 @@
  Spark Fun Electronics
  Byron Jacquot
  
- This code is public domain but you buy me a beer if you use this and we meet 
- someday (Beerware license).
+ This code is public domain but you can buy me a beer if you use this and we 
+ meet someday (Beerware license).
  
- This demonstrates interfacing the VKey voltage keypad using the VKey library.
+ This demonstrates interfacing the SparkFun VKey voltage keypad using 
+ the VKey Arduino library.
  
  The VKey has an array of 12 pushbuttons, each producing a unique analog voltage 
  when  pushed.  A microcontroller can read the voltage, and determine which 
  key has been pressed.  The VKey library keeps track of the analog pin 
- connection, key status, and voltage calculation details.
+ connection, key status, and voltage calibration details.
  
  To use the library, instantiate a VKey object and periodically check for input 
  using the checkKeys() function.
@@ -35,11 +36,11 @@ void setup()
 
 void loop() 
 {
-  VKey::eKeynum k;  // Variable to receive the 
+  VKey::eKeynum k;  // Variable to receive the key indication
 
   if(keypad.checkKeys(k))
   {
-    // CheckKeys will always return the current key in k.
+    // CheckKeys will always return the current key in parameter k.
     // The boolean return value indicates whether that value is different than
     // the previous value.
     
