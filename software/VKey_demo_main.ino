@@ -14,6 +14,11 @@
  key has been pressed.  The VKey library keeps track of the analog pin 
  connection, key status, and voltage calibration details.
  
+ The VKey was connected to the Arduino as follows:
+ VKey GND  -> Arduino GND
+ VKey Vout -> Arduino analog input A1
+ VKey V+   -> Arduino VCC 
+ 
  To use the library, instantiate a VKey object and periodically check for input 
  using the checkKeys() function.
 */
@@ -27,7 +32,7 @@ VKey keypad(1, VKey::FIVE );
 
 void setup()
 {
-  
+  // Initialize serial port for text output
   Serial.begin(9600);
   Serial.println("Welcome to VKey example");
   
@@ -38,12 +43,12 @@ void loop()
 {
   VKey::eKeynum k;  // Variable to receive the key indication
 
+    /* CheckKeys will always return the current key in parameter k.
+       The boolean return value indicates whether that value is different than
+       the previous value.
+     */
   if(keypad.checkKeys(k))
   {
-    // CheckKeys will always return the current key in parameter k.
-    // The boolean return value indicates whether that value is different than
-    // the previous value.
-    
     // Only print when value has changed
     Serial.print("Got key: ");
     Serial.println(k);

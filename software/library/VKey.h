@@ -3,7 +3,7 @@
  * @brief 	Library for the SparkFun VKey analog voltage keypad
  * @author	Byron Jacquot(SparkFun Electronics)
  * 
- * @copyright	This code is public domain but you buy me a beer if you use
+ * @copyright	This code is public domain but you can buy me a beer if you use
  * this and we meet someday (Beerware license).
  * 
  * This library interfaces with the VKey analog keypad.  It relies on the 
@@ -131,9 +131,13 @@ class VKey
 
     /* Declaration of an array of Scale structures
      *
+     * It's static because we can share one instance of the data with 
+     * multiple VKeys.
      * Since it's constant, it's placed in PROGMEM to avoid using RAM.
      */
     static const PROGMEM VKeyScale scales[MAX];
+    
+    // Pointer to active row of the above table.
     const PROGMEM  VKeyScale* scale_p;
     
     /* Member variables

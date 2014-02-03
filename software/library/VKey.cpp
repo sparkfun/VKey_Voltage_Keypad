@@ -3,7 +3,7 @@
  * @brief 	Library for the SparkFun VKey analog voltage keypad
  * @author	Byron Jacquot(SparkFun Electronics)
  * 
- * @copyright	This code is public domain but you buy me a beer if you use
+ * @copyright	This code is public domain but you can buy me a beer if you use
  * this and we meet someday (Beerware license).
  * 
  * This library interfaces with the VKey analog keypad.  It relies on the 
