@@ -1,19 +1,36 @@
-/**
- * @file	VKey.h
- * @brief 	Library for the SparkFun VKey analog voltage keypad
- * @author	Byron Jacquot(SparkFun Electronics)
- * 
- * @copyright	This code is public domain but you can buy me a beer if you use
- * this and we meet someday (Beerware license).
- * 
- * This library interfaces with the VKey analog keypad.  It relies on the 
- * Arduino analogRead functionality.
- * The keypad has 12 keys, and outputs a unique Voltage for each key.  It allows
- * an application to interface with up to 12 keys using only one ADC line.
- *
- * To use the library, instantiate a VKey object, then call checkKeys() to
- * read the keypad.
- */
+/******************************************************************************
+ VKey.h
+ VKey Voltage Keypad library
+ By Byron Jacquot @ SparkFun Electronics
+ February 4, 2014
+ https://github.com/sparkfun/VKey_Voltage_Keypad
+
+ This library interfaces with the VKey analog keypad.  It relies on the 
+ Arduino analogRead functionality.
+ The keypad has 12 keys, and outputs a unique Voltage for each key.  It allows
+ an application to interface with up to 12 keys using only one ADC line.
+
+ To use the library, instantiate a VKey object, then call checkKeys() to
+ read the keypad.
+
+ See VKey_demo_main.ino for a usage example.
+ 
+ Also, see the contents of the /documents/ directory for information about 
+ scaling and calibration.  They'll be useful if you're porting the library to 
+ other supply or reference voltages, or ADC bit widths.
+ 
+ Resources:
+ no additional library requirements.
+
+ Development environment specifics:
+ Developed on Arduino IDE 1.0.5
+ Tested on a 5V Redboard and 3.3V Pro Mini
+
+ This code is beerware; if you see me (or any other SparkFun employee) at the
+ local, and you've found our code helpful, please buy us a round!
+
+ Distributed as-is; no warranty is given.
+******************************************************************************/
  
 #ifndef __VKEY_H__
 #define __VKEY_H__
