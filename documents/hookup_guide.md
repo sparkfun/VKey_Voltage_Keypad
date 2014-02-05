@@ -43,7 +43,7 @@ Looking at the front of the board, we see an 3 * 4 array of tactile switches, an
 
 **GND** should be connected to the ground of the host circuit.
 
-**Vout** is the analog output of the keypad, and should be connected to an analogto-digital channel (ausuch as A0, A1, etc on an Arduino).
+**Vout** is the analog output of the keypad, and should be connected to an analog-to-digital channel (such as A0, A1, etc on an Arduino).
 
 **V+** is the power supply, and should be connected to a voltage between 2.5V - 5.5V.
 
