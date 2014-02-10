@@ -34,12 +34,11 @@
  Distributed as-is; no warranty is given.
 ******************************************************************************/
 
-#include <Arduino.h>
 #include <VKey.h>
 
 // Global declaration of the VKey class
 // Initialized with analog pin number and supply voltage
-VKey keypad(1, VKey::FIVE );
+VKey keypad(A1, VKey::FIVE );
 
 void setup()
 {

@@ -111,11 +111,11 @@ VKey::eKeynum VKey::voltageToKey(int v)
 
   VKey::eKeynum k;
   
-  uint16_t bottom, stp, top;
+  uint16_t bottom, step, top;
   
   // Read the constants from program memory
   bottom = pgm_read_word_near(&scale_p->offset);
-  stp = pgm_read_word_near(&scale_p->step_size);
+  step = pgm_read_word_near(&scale_p->step_size);
   top = pgm_read_word_near(&scale_p->top);
   
   if( (v < bottom) || (v > top) )
@@ -126,7 +126,7 @@ VKey::eKeynum VKey::voltageToKey(int v)
   else
   {
     // Apply the calculation based on the configured constants.
-    k = VKey::eKeynum(12 - ((v - bottom)/stp));
+    k = VKey::eKeynum(12 - ((v - bottom)/step));
   }
   
   return k;
