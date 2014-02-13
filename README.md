@@ -1,4 +1,5 @@
-#VKey Voltage Keypad
+VKey Voltage Keypad
+===================
 
 12 Button keypad with analog voltage output.
 
@@ -7,16 +8,20 @@
 
 Design and firmware files for the [VKey Voltage Keypad](https://www.sparkfun.com/products/12080).
 
-##Repository Contents
+Repository Contents
+-------------------
 
-* **/hardware** - Eagle PCB and schematic files
-* **/software** - Arduino library and example code
-* **/documents** - Additional design files including LTspice simulation and parametric spreadsheets 
+* **/Documents** - Additional design files including LTspice simulation and parametric spreadsheets 
+* **/Hardware** - Eagle PCB and schematic files
+* **/Production** - Test bed files and production panel files
+* **/Software** - Arduino library and example code
 
 License Information
 -------------------
+The hardware is released under [Creative Commons ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
+The code is beerware; if you see me (or any other SparkFun employee) at the local, and you've found our code helpful, please buy us a round!
 
-All contents of this repository are released under [Creative Commons Attribution-ShareAlike 4.0 International ](http://creativecommons.org/licenses/by-sa/4.0/).
+Distributed as-is; no warranty is given.
 
 Author: Byron Jacquot @ SparkFun Electonics
 
