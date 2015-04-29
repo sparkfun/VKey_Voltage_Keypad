@@ -1,11 +1,11 @@
 VKey Voltage Keypad
 ===================
 
+![VKey Voltage Keypad](https://dlnmh9ip6v2uc.cloudfront.net/images/products/1/2/0/8/0/12080-01_medium.jpg)  
+
+[*VKey Voltage Keypad(PRT_12080)*](https://www.sparkfun.com/products/12080)
+
 12 Button keypad with analog voltage output.
-
-[![VKey Voltage Keypad](https://dlnmh9ip6v2uc.cloudfront.net/images/products/1/2/0/8/0/12080-01_medium.jpg)  
-*VKey Voltage Keypad*](https://www.sparkfun.com/products/12080)
-
 Design and firmware files for the [VKey Voltage Keypad](https://www.sparkfun.com/products/12080).
 
 Repository Contents
@@ -13,8 +13,9 @@ Repository Contents
 
 * **/Documents** - Additional design files including LTspice simulation and parametric spreadsheets 
 * **/Hardware** - Eagle PCB and schematic files
+* **/Libraries** - Arduino library and example code
 * **/Production** - Test bed files and production panel files
-* **/Software** - Arduino library and example code
+
 
 License Information
 -------------------
