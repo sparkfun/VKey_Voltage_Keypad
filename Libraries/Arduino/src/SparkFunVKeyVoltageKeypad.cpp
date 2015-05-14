@@ -26,6 +26,8 @@
  Developed on Arduino IDE 1.0.5
  Tested on a 5V Redboard and 3.3V Pro Mini
 
+ **UPDATED FOR ARDUINO 1.6.4 5/2015**
+ 
  This code is beerware; if you see me (or any other SparkFun employee) at the
  local, and you've found our code helpful, please buy us a round!
 
