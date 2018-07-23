@@ -16,6 +16,11 @@ Repository Contents
 * **/Libraries** - Arduino library and example code
 * **/Production** - Test bed files and production panel files
 
+Documentation
+--------------
+* **[Library](https://github.com/sparkfun/SparkFun_VKey_Voltage_Keypad_Arduino_Library/tree/master)** - Arduino library for the VKey Voltage Keypad.
+* **[Hookup Guide](https://learn.sparkfun.com/tutorials/vkey-voltage-keypad-hookup-guide)** - Basic hookup guide for the VKey Voltage Keypad.
+* **[SparkFun 3D Model repo](https://github.com/sparkfun/3D_Models)** - 3D models of SparkFun products. 
 
 License Information
 -------------------
